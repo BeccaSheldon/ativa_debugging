@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'binding_of_caller'
+
 # Use HAML
 gem 'haml-rails'
 gem 'haml'
@@ -17,6 +19,7 @@ gem 'pry'
 gem "fog", "~> 1.3.1"
 
 group :development do 
+  gem 'better_errors'
 	gem 'figaro'
 end
 

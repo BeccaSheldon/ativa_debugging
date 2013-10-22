@@ -7,9 +7,17 @@ class Post < ActiveRecord::Base
 
   mount_uploader :attachment, ImageUploader
 
-  def snippet(length)
-    message.truncate length
+  def snippet(options={})
+    if options.has_key? :length
+      message.truncate(options[:length])
+    else
+      message.truncate(20)
+    end
   end
+
+  # def snippet(length)
+  #   message.truncate length
+  # end
 
   private
 
